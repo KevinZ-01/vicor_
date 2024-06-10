@@ -36,6 +36,18 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <title>Title Size Change</title>
+    <style>
+        .publication-title {
+            font-size: 24px; /* Change to desired font size */
+        }
+        .title.is-1 {
+            font-size: 36px; /* Change to desired font size */
+        }
+        .title.is-2 {
+            font-size: 30px; /* Change to desired font size */
+        }
+    </style>
   </head>
   <body>
 
@@ -117,23 +129,18 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Large-scale <a href="https://github.com/CompVis/stable-diffusion">text-to-image diffusion models</a> have made
-            amazing advances. However, the status quo is to use
-            text input alone, which can impede controllability. In this
-            work, we propose GLIGEN, <b>G</b>rounded-<b>L</b>anguage-to-<b>I</b>mage
-            <b>Gen</b>eration, a novel approach that builds upon and extends
-            the functionality of existing pre-trained text-to-image diffusion models 
-            by enabling them to also be conditioned on
-            <a href="https://github.com/microsoft/GLIP">grounding inputs</a>. <b>To preserve the vast concept knowledge
-              of the pre-trained model, we freeze all of its weights and
-              inject the grounding information into new trainable layers
-              via a gated mechanism</b>. Our model achieves open-world
-            grounded text2img generation with caption and bounding
-            box condition inputs, and the grounding ability generalizes
-            well to novel spatial configuration and concepts. GLIGEN’s
-            zero-shot performance on COCO and LVIS outperforms that
-            of existing supervised layout-to-image baselines by a large
-            margin.
+            In our work, we explore the synergistic capabilities of pre-trained vision-and-language models (VLMs) and large language models
+            (LLMs) for visual commonsense reasoning (VCR). We categorize the problem of VCR into visual commonsense understanding (VCU) and
+            visual commonsense inference (VCI). For VCU, which involves perceiving the literal visual content, pre-trained VLMs exhibit
+            strong cross-dataset generalization. On the other hand, in VCI, where the goal is to infer conclusions beyond image content, 
+            VLMs face difficulties. We find that a baseline where VLMs provide perception results (image captions) to LLMs leads to improved
+            performance on VCI. However, we identify a challenge with VLMs' passive perception, which often misses crucial context 
+            information, leading to incorrect or uncertain reasoning by LLMs. To mitigate this issue, we suggest a collaborative approach
+            where LLMs, when uncertain about their reasoning, actively direct VLMs to concentrate on and gather relevant visual elements to 
+            support potential commonsense inferences. In our method, named ViCor, pre-trained LLMs serve as problem classifiers to analyze
+            the problem category, VLM commanders to leverage VLMs differently based on the problem classification, and visual commonsense 
+            reasoners to answer the question. VLMs will perform visual recognition and understanding. We evaluate our framework on two VCR 
+            benchmark datasets and outperform all other methods that do not require in-domain supervised fine-tuning.
           </p>
         </div>
       </div>
